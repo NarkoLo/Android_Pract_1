@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.Toast;
 
 import java.util.Arrays;
-import java.util.Date;
+
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "App1";
@@ -77,6 +76,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        try {
+            super.onResume();
+            Toast.makeText(this, "Application resumed", Toast.LENGTH_SHORT).show();
+            Log.i(TAG, "Application resumed");
+
+        }
+        catch (Exception e){
+            Log.e(TAG, "Fatal Error from " + Arrays.toString(e.getStackTrace()));
+        }
+
+    }
 
     @Override
     protected void onDestroy() {
