@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
             super.onResume();
             Toast.makeText(this, "Application resumed", Toast.LENGTH_SHORT).show();
             Log.i(TAG, "Application resumed");
-
         }
         catch (Exception e){
             Log.e(TAG, "Fatal Error from " + Arrays.toString(e.getStackTrace()));
